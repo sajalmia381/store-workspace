@@ -38,11 +38,6 @@ Delete Existing store-client Module
 npx nx g @nrwl/angular:host store-client
 ```
 
-```bash
->  NX  Generating @nrwl/angular:host
-✔ Which stylesheet format would you like to use? · scss
-```
-
 # 02. Packages
 
 ## 01 TailwindCss Package
@@ -57,8 +52,100 @@ npx nx generate @nrwl/angular:setup-tailwind
 
 ## Add Angular Material
 
-```bash
+Install dependency
 
+```bash
+npm install @angular/material @angular/cdk --save
+```
+
+### Add Material to a project
+
+#### @Option 01: Add Angular Material to a project by terminal
+
+```bash
+>  NX  Generating @nrwl/angular:host
+✔ Which stylesheet format would you like to use? · scss
+```
+
+#### @Option 02:Add Angular Material to a project by Manually
+
+Edit apps/store-client/src/styles.scss file and add those scss for custom theme
+
+```ts
+/* ---------------- 01. Angular Material Start -------------- */
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$store-primary: mat.define-palette(mat.$cyan-palette);
+$store-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$store-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$store-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $store-primary,
+      accent: $store-accent,
+      warn: $store-warn
+    )
+  )
+);
+
+$store-dark-theme: mat.define-dark-theme(
+  (
+    color: (
+      primary: $store-primary,
+      accent: $store-accent,
+      warn: $store-warn
+    )
+  )
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($store-theme);
+.dark {
+  background-color: var(--bg-color);
+  color: #ffffff;
+  @include mat.all-component-colors($store-dark-theme);
+  .mat-drawer {
+    background-color: var(--sidenav-bg-color);
+    &-container {
+      background-color: var(--bg-color);
+    }
+  }
+  .mat-table {
+    background-color: var(--bg-card);
+  }
+  .mat-select-panel,
+  .mat-menu-panel,
+  .mat-dialog-container {
+    background-color: var(--bg-popup);
+  }
+}
+/* ---------------- 01. Angular Material End -------------- */
+```
+
+```bash
+# Checking can be add
+nx g @angular/material:ng-add --project=store-client --dry-run
+
+# Add to project
+nx g @angular/material:ng-add --project=store-client
 ```
 
 # 03. Generate Angular Ui Library

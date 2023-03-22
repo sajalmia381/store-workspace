@@ -1,0 +1,42 @@
+.ti-form {
+  label {
+    @apply block uppercase tracking-wide text-xs font-bold mb-2;
+    @apply text-gray-700 dark:text-white;
+  }
+  textarea,
+  input {
+    border-color: var(--border-color);
+    @apply appearance-none block w-full rounded py-3 px-4 mb-3 leading-tight focus:outline-none;
+    @apply text-gray-700 border focus:border-gray-500;
+    @apply dark:text-gray-300;
+  }
+}
+
+.field {
+  &__mat-field {
+    width: 100%;
+    max-width: 320px;
+    .mat-form-field-wrapper {
+      margin: 0;
+      padding: 0;
+    }
+    .mat-form-field-infix {
+      width: 170px;
+      padding: 10px 0;
+      border-top: 5px solid transparent;
+      font-size: 13px;
+    }
+    .mat-select-arrow-wrapper {
+      transform: none !important;
+    }
+  }
+}
+
+.dark {
+  .ti-form {
+    textarea,
+    input {
+      background-color: #30384b;
+    }
+  }
+}
