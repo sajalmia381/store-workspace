@@ -148,7 +148,18 @@ nx g @angular/material:ng-add --project=store-client --dry-run
 nx g @angular/material:ng-add --project=store-client
 ```
 
-# 03. Generate Angular Ui Library
+<!-- Project Setup Finish -->
+
+## 03. Setup Remote App(store-client-node,store-client-go)
+
+### Generate remote apps
+
+```bash
+nx g @nrwl/angular:remote store-client-node --host=store-client
+nx g @nrwl/angular:remote store-client-go --host=store-client
+```
+
+## 03. Generate Angular Ui Library
 
 ```bash
 nx g @nrwl/angular:library ui-lib --tags=ui
@@ -161,7 +172,7 @@ nx g @nrwl/angular:library ui-lib --tags=ui
 ## Serve Dashboard as Host
 
 ```bash
-nx run store-client:serve:development --devRemotes=login
+nx run store-client:serve:development --devRemotes=store-client-node,store-client-go
 ```
 
 <!-- ## Serve Login as Remote // Not Need

@@ -1,4 +1,4 @@
 module.exports = {
   name: 'store-client',
-  remotes: [],
+  remotes: ['store-client-node', 'store-client-go'],
 };
