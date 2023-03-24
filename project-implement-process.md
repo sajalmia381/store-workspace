@@ -44,11 +44,54 @@ npx nx g @nrwl/angular:host store-client
 
 [Checkout This Link](https://blog.nrwl.io/set-up-tailwind-css-with-angular-in-an-nx-workspace-6f039a0f4479)
 
-## Add TailWindCss to app
+### Add TailWindCss to apps
 
 ```bash
-npx nx generate @nrwl/angular:setup-tailwind
+npx nx generate @nrwl/angular:setup-tailwind store-client
+npx nx generate @nrwl/angular:setup-tailwind store-client-node
+npx nx generate @nrwl/angular:setup-tailwind store-client-go
 ```
+
+#### -> Add config for host app
+```bash
+const { createGlobPatternsForDependencies } = require('@nrwl/angular/tailwind');
+const { join } = require('path');
+
+const sharedTailwindConfig = require('../../libs/tailwind-preset/tailwind-preset.config');
+
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  presets: [sharedTailwindConfig],
+  content: [
+    join('apps/*/src/**/!(*.stories|*.spec).{ts,html,scss}'),
+    ...createGlobPatternsForDependencies(__dirname),
+  ],
+};
+
+```
+#### -> Add config for for rest of remotes app
+```bash
+const { createGlobPatternsForDependencies } = require('@nrwl/angular/tailwind');
+const { join } = require('path');
+
+const sharedTailwindConfig = require('../../libs/tailwind-preset/tailwind-preset.config');
+
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  presets: [sharedTailwindConfig],
+  content: [
+    join(__dirname, 'src/**/!(*.stories|*.spec).{ts,html,scss}'),
+    ...createGlobPatternsForDependencies(__dirname),
+  ],
+};
+
+```
+
+## Add Tailwind to remote apps with same theme configuration
+
+[Check this link](https://nx.dev/recipes/other/using-tailwind-css-with-angular-projects#tailwind-css-setup-scenarios)
+
+
 
 ## Add Angular Material
 

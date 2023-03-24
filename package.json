@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "start": "nx run store-client:serve --devRemotes=store-client-node,store-client-go",
-    "build": "nx run store-client:build --devRemotes=store-client-node,store-client-go",
+    "build": "nx run store-client:build",
     "test": "nx run test",
     "lint": "nx run workspace-lint && nx run lint",
     "e2e": "nx run e2e",
@@ -12,7 +12,6 @@
     "build:node": "nx run store-client-node:build",
     "start:go": "nx run store-client-go:serve",
     "build:go": "nx run store-client-go:build",
-    
     "affected:apps": "nx run affected:apps",
     "affected:libs": "nx run affected:libs",
     "affected:build": "nx run affected:build",
@@ -25,8 +24,9 @@
     "format:write": "nx run format:write",
     "format:check": "nx run format:check",
     "update": "nx run migrate latest",
-    "dep-graph": "nx run dep-graph",
-    "help": "nx run help",
+    "dep-graph": "nx dep-graph",
+    "graph": "nx graph",
+    "help": "nx help",
     "nx": "nx",
     "workspace-generator": "nx run workspace-generator"
   },

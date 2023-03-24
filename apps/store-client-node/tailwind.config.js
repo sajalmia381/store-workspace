@@ -7,7 +7,7 @@ const sharedTailwindConfig = require('../../libs/tailwind-preset/tailwind-preset
 module.exports = {
   presets: [sharedTailwindConfig],
   content: [
-    join('apps/*/src/**/!(*.stories|*.spec).{ts,html,scss}'),
+    join(__dirname, 'src/**/!(*.stories|*.spec).{ts,html,scss}'),
     ...createGlobPatternsForDependencies(__dirname),
   ],
 };
