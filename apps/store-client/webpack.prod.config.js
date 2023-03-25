@@ -12,4 +12,8 @@ module.exports = withModuleFederation({
    *   ['app2', 'https://app2.example.com'],
    * ]
    */
+  remotes: [
+    ['store-client-node', 'http://localhost:8001'],
+    ['store-client-go', 'http://localhost:8002'],
+  ]
 });
