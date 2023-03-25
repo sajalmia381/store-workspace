@@ -19,12 +19,18 @@
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
-        "lintFilePatterns": ["apps/store-client-go-e2e/**/*.{js,ts}"]
+        "lintFilePatterns": [
+          "apps/store-client-go-e2e/**/*.{js,ts}"
+        ]
       }
     }
   },
   "tags": [],
-  "implicitDependencies": ["store-client-go"]
+  "implicitDependencies": [
+    "store-client-go"
+  ]
 }

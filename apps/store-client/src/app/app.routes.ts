@@ -1,6 +1,7 @@
-import { Route } from '@angular/router';
+import { Route, Routes } from '@angular/router';
+import { LayoutComponent } from './core/layout/layout.component';
 
-export const appRoutes: Route[] = [
+const defaultLayoutRoutes: Routes = [
   {
     path: 'v1',
     loadChildren: () =>
@@ -11,4 +12,12 @@ export const appRoutes: Route[] = [
     loadChildren: () =>
       import('store-client-node/Module').then((m) => m.RemoteEntryModule),
   },
+]
+
+export const appRoutes: Route[] = [
+  {
+    path: '',
+    component: LayoutComponent,
+    children: defaultLayoutRoutes
+  }
 ];

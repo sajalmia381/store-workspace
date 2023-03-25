@@ -23,7 +23,10 @@ module.exports = {
       spacing: {
         page: '1.25rem'
       }
-    }
+    },
+    container: {
+      center: true,
+    },
   },
   variants: {
     extend: {}

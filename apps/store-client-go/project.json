@@ -7,19 +7,25 @@
   "targets": {
     "build": {
       "executor": "@nrwl/angular:webpack-browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/store-client-go",
         "index": "apps/store-client-go/src/index.html",
         "main": "apps/store-client-go/src/main.ts",
-        "polyfills": ["zone.js"],
+        "polyfills": [
+          "zone.js"
+        ],
         "tsConfig": "apps/store-client-go/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
           "apps/store-client-go/src/favicon.ico",
           "apps/store-client-go/src/assets"
         ],
-        "styles": ["apps/store-client-go/src/styles.scss"],
+        "styles": [
+          "apps/store-client-go/src/styles.scss"
+        ],
         "scripts": [],
         "customWebpackConfig": {
           "path": "apps/store-client-go/webpack.config.js"
@@ -79,7 +85,9 @@
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
         "lintFilePatterns": [
           "apps/store-client-go/**/*.ts",
@@ -89,7 +97,9 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
       "options": {
         "jestConfig": "apps/store-client-go/jest.config.ts",
         "passWithNoTests": true

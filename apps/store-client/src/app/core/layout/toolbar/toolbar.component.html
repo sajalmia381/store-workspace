@@ -1,0 +1,80 @@
+<div class="topbar bg-white dark:bg-gray-900 border-b dark:border-gray-700 shadow py-4 z-10 relative">
+  <div class="container-fluid flex flex-wrap items-center">
+    <div class="flex-grow flex items-center">
+      <a routerLink="/">
+        <h2 class="text-xl font-bold">StoreApi</h2>
+      </a>
+      <button
+        (click)="toggleSidenav()"
+        mat-icon-button
+        class="bg-gray-100 dark:bg-gray-800 ml-3 md:hidden"
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+    <div class="topbar__right sm:ml-auto mt-2 sm:mt-0">
+      <div class="flex flex-wrap items-center">
+        <nav class="hidden md:block">
+          <ul class="navbar__nav">
+            <li class="nav__item">
+              <a
+                class="nav__link"
+                routerLink=""
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
+                ><mat-icon>home</mat-icon></a
+              >
+            </li>
+            <li class="nav__item">
+              <a
+                class="nav__link"
+                routerLink="/docs"
+                routerLinkActive="active"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
+                >Docs</a
+              >
+            </li>
+            <li class="nav__item">
+              <a
+                class="nav__link"
+                href="https://github.com/sajalmia381/store-api-go"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
+                >
+                <div class="flex items-center">
+                  <mat-icon class="icon_sm mr-2">location_on</mat-icon>
+                  <span>Github</span>
+                </div>
+                </a
+              >
+            </li>
+          </ul>
+        </nav>
+        <div class="navbar__icons flex items-center">
+          <!-- <button mat-button [matMenuTriggerFor]="menu">
+            <span class="flex items-center">
+              V0
+              <mat-icon class="icon_sm">arrow_drop_down</mat-icon>
+            </span>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item routerLink="/v1">V1</button>
+            <button mat-menu-item routerLink="/">V0</button>
+          </mat-menu>
+          -->
+          <button (click)="toggleTheme()" mat-icon-button class="bg-gray-100 dark:bg-gray-800 mr-3">
+            <mat-icon>{{ themeMode === 'light' ? 'dark_mode' : 'light_mode' }}</mat-icon>
+          </button> 
+          <a
+            routerLink="/admin"
+            mat-icon-button
+            class="bg-gray-100 dark:bg-gray-800 mr-3"
+          >
+            <mat-icon>people</mat-icon>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

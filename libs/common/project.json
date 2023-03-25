@@ -1,8 +1,8 @@
 {
-  "name": "ui-lib",
+  "name": "common",
   "$schema": "../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
-  "sourceRoot": "libs/ui-lib/src",
+  "sourceRoot": "libs/common/src",
   "prefix": "store-workspace",
   "targets": {
     "test": {
@@ -11,7 +11,7 @@
         "{workspaceRoot}/coverage/{projectRoot}"
       ],
       "options": {
-        "jestConfig": "libs/ui-lib/jest.config.ts",
+        "jestConfig": "libs/common/jest.config.ts",
         "passWithNoTests": true
       },
       "configurations": {
@@ -28,13 +28,11 @@
       ],
       "options": {
         "lintFilePatterns": [
-          "libs/ui-lib/**/*.ts",
-          "libs/ui-lib/**/*.html"
+          "libs/common/**/*.ts",
+          "libs/common/**/*.html"
         ]
       }
     }
   },
-  "tags": [
-    "ui"
-  ]
+  "tags": []
 }

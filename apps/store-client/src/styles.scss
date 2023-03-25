@@ -78,3 +78,50 @@ $store-dark-theme: mat.define-dark-theme(
 // Core Theme
 @import './assets/scss/variables.scss';
 @import './assets/scss';
+
+html,
+body {
+  height: 100%;
+}
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+body {
+  margin: 0;
+  font-family: 'Roboto', 'Helvetica Neue', sans-serif;
+  letter-spacing: 0.3px;
+}
+a {
+  transition: all 0.3s linear;
+}
+.light {
+  background: #fafafa;
+}
+.container {
+  &-fluid {
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    @apply pl-4 pr-4;
+  }
+}
+
+@screen xxl {
+  .container {
+    &-fluid {
+      @apply pl-8 pr-8;
+    }
+  }
+}
+.global-loader {
+  @apply fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+}
+
