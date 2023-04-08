@@ -18,14 +18,11 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@store-workspace/common": [
+      "@store/common": [
         "libs/common/src/index.ts"
       ],
-      "@ui-lib": [
+      "@store/ui-lib": [
         "libs/ui-lib/src/index.ts"
-      ],
-      "@common": [
-        "libs/common/src/index.ts"
       ]
     }
   },

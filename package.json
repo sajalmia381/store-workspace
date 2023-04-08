@@ -43,6 +43,7 @@
     "@angular/platform-browser-dynamic": "~15.2.0",
     "@angular/router": "~15.2.0",
     "@nrwl/angular": "15.8.5",
+    "prismjs": "^1.29.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
@@ -67,6 +68,7 @@
     "@schematics/angular": "~15.2.0",
     "@types/jest": "^29.4.0",
     "@types/node": "16.11.7",
+    "@types/prismjs": "^1.26.0",
     "@typescript-eslint/eslint-plugin": "^5.36.1",
     "@typescript-eslint/parser": "^5.36.1",
     "autoprefixer": "^10.4.0",

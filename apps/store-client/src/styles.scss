@@ -71,8 +71,12 @@ $store-dark-theme: mat.define-dark-theme(
 @tailwind utilities;
 /* ---------------- 02. TailwindCss End -------------- */ 
 
-/* ---------------- 03. Custom Our Library Start -------------- */ 
-/* ---------------- 03. Custom Our Library End -------------- */ 
+/* ---------------- 03. External Our Library Start -------------- */
+@import 'prismjs/themes/prism-okaidia.css';
+/* ---------------- 03. External Our Library End -------------- */ 
+
+/* ---------------- 03. Custom/Internal Our Library Start -------------- */ 
+/* ---------------- 03. Custom/Internal Our Library End -------------- */ 
 
 /* You can add global styles to this file, and also import other style files */
 // Core Theme

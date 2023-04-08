@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router';
 
 import { RemoteEntryComponent } from './entry.component';
 import { remoteRoutes } from './entry.routes';
-import { ENV_TOKEN } from '@store-workspace/common';
+import { ENV_TOKEN } from '@store/common';
 import { environment } from '../../environments/environment';
 
 @NgModule({

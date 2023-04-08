@@ -1,9 +1,10 @@
 import { Component, Inject, OnInit, Optional } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http'
-import { ENV_TOKEN, IEnvironment } from '@store-workspace/common';
+import { ENV_TOKEN, IEnvironment } from '@store/common';
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import { MatIconModule } from '@angular/material/icon';
+
 @Component({
   selector: 'store-workspace-home',
   standalone: true,
