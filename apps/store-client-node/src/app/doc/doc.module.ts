@@ -7,9 +7,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { DocSidenavComponent } from './doc-sidenav/doc-sidenav.component';
 
-import 'prismjs/components/prism-typescript';
-import { AsPrismModule } from 'as-prism';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { LayoutModule } from '@angular/cdk/layout';
+
+import { AsPrismModule } from 'as-prism';
+import 'prismjs/components/prism-typescript';
 // import 'prismjs/components/prism-yaml';
 // import 'prismjs/components/prism-scss';
 
@@ -20,9 +22,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     DocRoutingModule,
     MatSidenavModule,
     MatIconModule,
-    MatIconModule,
-    MatIconModule,
     MatProgressSpinnerModule,
+    LayoutModule,
     AsPrismModule,
   ]
 })
