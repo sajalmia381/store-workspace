@@ -1,0 +1,46 @@
+// Layout
+.doc-layout-container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+// Layout end
+
+.doc {
+  &__content {
+    @apply p-4 sm:p-8 xxl:p-12 flex-grow;
+  }
+}
+.card {
+  @apply flex flex-col;
+  @apply min-w-0 p-4 xxl:p-8;
+  @apply rounded;
+  @apply break-words;
+  position: relative;
+  background-clip: border-box;
+  border-radius: 0.25rem;
+  &__title {
+    @apply mb-0 mb-10 font-extrabold flex items-center;
+    font-size: 1.5rem;
+    .mat-icon {
+      font-size: 1.5rem;
+      line-height: 1.5rem;
+      height: 1.5rem;
+      width: 1.5rem;
+      margin-right: 1rem;
+      @apply text-primary;
+    }
+  }
+  &__api {
+    &:not(:first-child) {
+      padding-top: 2.5rem;
+    }
+  }
+  &__sub_title {
+    font-size: 1.25rem;
+  }
+}

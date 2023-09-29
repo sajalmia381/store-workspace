@@ -4,11 +4,14 @@ import { HttpClient, HttpClientModule } from '@angular/common/http'
 import { ENV_TOKEN, IEnvironment } from '@store/common';
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import { MatIconModule } from '@angular/material/icon';
+import { AsPrismModule } from 'as-prism';
+
+import 'prismjs/components/prism-json';
 
 @Component({
   selector: 'store-workspace-home',
   standalone: true,
-  imports: [CommonModule, HttpClientModule, MatProgressSpinnerModule, MatIconModule],
+  imports: [CommonModule, HttpClientModule, MatProgressSpinnerModule, MatIconModule, AsPrismModule],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
@@ -24,9 +27,10 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.apiBaseUrl = this.env.nodeApiBaseUrl;
     
-    this.code = `fetch('${this.apiBaseUrl + this.productEndpoint}')
-    .then(response => response.json())
-    .then(json => console.log(json))`;
+    this.code = `
+fetch('${this.apiBaseUrl + this.productEndpoint}')
+  .then(response => response.json())
+  .then(json => console.log(json))`;
   }
   
   fetchProduct(): void {
