@@ -13,14 +13,14 @@ export default {
     {
       name: 'Get a single product',
       code: `fetch('${apiBaseUrl}/products/running-sneaker')
-      .then(response => response.json())
-      .then(json => console.log(json))`
+        .then(response => response.json())
+        .then(json => console.log(json))`
     },
     {
       name: 'Pagination results',
       code: `fetch('${apiBaseUrl}/products?limit=10&page=1')
-      .then(response => response.json())
-      .then(json => console.log(json))`
+        .then(response => response.json())
+        .then(json => console.log(json))`
     },
     {
       name: 'Create product',
@@ -72,14 +72,14 @@ export default {
     {
       name: 'Get User',
       code: `fetch('${apiBaseUrl}/users')
-      .then(response => response.json())
-      .then(json => console.log(json))`
+        .then(response => response.json())
+        .then(json => console.log(json))`
     },
     {
       name: 'Get Single User',
       code: `fetch('${apiBaseUrl}/users/612e4851345dcc333ac6cb24')
-      .then(response => response.json())
-      .then(json => console.log(json))`
+        .then(response => response.json())
+        .then(json => console.log(json))`
     },
     {
       name: 'Add New User',
@@ -121,26 +121,26 @@ export default {
     {
       name: 'Delete User',
       code: `fetch('${apiBaseUrl}/users/612e4851345dcc333ac6cb24',
-      {
-          method: 'DELETE',
-      }
-  )
-  .then(response => response.json())
-  .then(json => console.log(json))`
+          {
+              method: 'DELETE',
+          }
+      )
+      .then(response => response.json())
+      .then(json => console.log(json))`
     }
   ],
   category: [
     {
       name: 'Get Categories',
       code: `fetch('${apiBaseUrl}/categories')
-      .then(response => response.json())
-      .then(json => console.log(json))`
+        .then(response => response.json())
+        .then(json => console.log(json))`
     },
     {
       name: 'Get Single Category',
       code: `fetch('${apiBaseUrl}/categories/mens-cloths')
-      .then(response => response.json())
-      .then(json => console.log(json))`
+        .then(response => response.json())
+        .then(json => console.log(json))`
     },
     {
       name: 'Add New Category',

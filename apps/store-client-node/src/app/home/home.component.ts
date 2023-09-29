@@ -7,11 +7,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { AsPrismModule } from 'as-prism';
 
 import 'prismjs/components/prism-json';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'store-workspace-home',
   standalone: true,
-  imports: [CommonModule, HttpClientModule, MatProgressSpinnerModule, MatIconModule, AsPrismModule],
+  imports: [CommonModule, RouterModule, HttpClientModule, MatProgressSpinnerModule, MatIconModule, AsPrismModule],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
