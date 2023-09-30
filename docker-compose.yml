@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  store-client:
+    build:
+      context: .
+      args:
+        APP_NAME: 'store-client'
+    container_name: store-client
+  store-client-node:
+    build:
+      context: .
+      args:
+        APP_NAME: 'store-client-node'
+    container_name: store-client-node
+  store-client-go:
+    build:
+      context: .
+      args:
+        APP_NAME: 'store-client-go'
+    container_name: store-client-go
+  gateway:
+    image: nginx:1.22.0-alpine
+    ports:
+      - '80:80'
+    volumes:
+      - ./nginx/gateway.nginx.conf:/etc/nginx/conf.d/default.conf
+    links:
+      - store-client
+      - store-client-node
+      - store-client-go

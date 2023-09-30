@@ -5,6 +5,7 @@
   "scripts": {
     "start": "nx run store-client:serve --devRemotes=store-client-node,store-client-go",
     "build": "nx run store-client:build",
+    "build:prod": "nx run store-client:build --devRemotes=store-client-node,store-client-go",
     "test": "nx run test",
     "lint": "nx run workspace-lint && nx run lint",
     "e2e": "nx run e2e",

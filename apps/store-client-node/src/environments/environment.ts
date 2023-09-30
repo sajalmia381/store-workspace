@@ -3,13 +3,14 @@
 // The list of file replacements can be found in `angular.json`.
 
 // const domain = 'http://localhost:8000';
-const domain = 'https://api.storerestapi.com';
+const BASE_URL = 'https://api.storerestapi.com';
 
 export const environment = {
   production: false,
-  nodeApiBaseUrl: domain,
-  baseUrl: domain,
-  GoApiBaseUrl: domain + "/v1",
+  nodeApiBaseUrl: BASE_URL,
+  baseUrl: BASE_URL,
+  
+  GoApiBaseUrl: BASE_URL + "/v1",
   GA: ''
 };
 

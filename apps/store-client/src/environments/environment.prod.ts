@@ -1,9 +1,9 @@
-const domain = 'https://api.storerestapi.com';
+const BASE_URL = 'https://api.storerestapi.com';
 
 export const environment = {
   production: true,
-  apiBaseUrl: domain,
-  baseUrl: domain,
-  v1BaseUrl: domain + "/v1",
-  GA: process.env['STORE_GA']
+  apiBaseUrl: BASE_URL,
+  baseUrl: BASE_URL,
+  v1BaseUrl: BASE_URL + "/v1",
+  GA: process.env['STORE_GOOGLE_ANALYTIC_ID']
 };

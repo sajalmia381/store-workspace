@@ -1,0 +1,23 @@
+FROM nginx:1.21.5-alpine
+
+ENV API_BASE_URL ''
+ENV STORE_GOOGLE_ANALYTIC_ID ''
+
+## Copy our default nginx config
+COPY nginx/default.conf /etc/nginx/conf.d/
+COPY nginx/nginx.conf /etc/nginx/nginx.conf
+
+## Remove default nginx website
+RUN rm -rf /usr/share/nginx/html/*
+
+## stage copy over the artifacts in dist folder to default nginx public folder
+COPY dist/apps/store-client /usr/share/nginx/html
+
+RUN mkdir /app
+COPY run.sh /app/run.sh
+RUN chmod +x /app/run.sh
+RUN sed -i -e 's/\r$//' /app/run.sh
+
+EXPOSE 8000
+
+ENTRYPOINT ["bin/sh", "/app/run.sh"]

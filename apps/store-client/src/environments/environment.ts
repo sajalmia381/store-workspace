@@ -2,14 +2,14 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 // const domain = 'http://localhost:8000';
-const domain = 'https://api.storerestapi.com';
+const BASE_URL = 'https://api.storerestapi.com';
 
 export const environment = {
   production: false,
-  apiBaseUrl: domain,
+  apiBaseUrl: BASE_URL,
   
-  baseUrl: domain,
-  v1BaseUrl: domain + "/v1",
+  baseUrl: BASE_URL,
+  v1BaseUrl: BASE_URL + "/v1",
   GA: ''
 };
 
